@@ -3,145 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Game</title>
+    <title>Document</title>
     <style>
         body {
             background-color: rgb(235, 185, 120);
-            margin-top: 10%;
+            margin-top: 5%;
         }
         #p_div {
-            height: 150px;
+            height: 180px;
             width: 400px;
             border: solid black;
             border-radius: 15px;
-            padding-top: 70px;
+            padding-top: 50px;
             margin: auto;
             text-align: center;
             background: linear-gradient(to right,rgb(94, 94, 215) 34%,rgb(249, 249, 106) 34%, rgb(249, 249, 106) 66%,rgb(253, 71, 71) 33%);
         }
-        button {
-            width: 100px;
+        .buttons1 {
+            width: 80px;
+            height: 80px;
             padding: 10px;
-            margin: 12px;
-            border-radius: 20px;
+            margin: 25px;
+            border-radius: 50%;
             background-color: antiquewhite;
             font-size: larger;
+            cursor: pointer;
         }
-        h1 {
+        .buttons2 {
+            width: 80px;
+            height: 80px;
+            padding: 15px;
+            margin: 25px;
+            border-radius: 50%;
+            background-color: antiquewhite;
+            font-size: larger;
+            cursor: pointer;
+        }
+        .buttons3 {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            margin: 25px;
+            border-radius: 50%;
+            background-color: antiquewhite;
+            font-size: larger;
+            cursor: pointer;
+        }
+        button {
+            width: 100px;
+            align-items: center;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 50px;
+            background-color: antiquewhite;
+            font-size: larger;
+            cursor: pointer;
+        }
+        h1,h2 {
             text-align: center;
         }
         p {
             text-align: center;
         }
+        #refreshdiv {
+            text-align: center;
+        }
+        #refreshimg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+        img {
+            display: block;
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 100%;
+        }
+        #batimg {
+            display: block;
+            /* margin-left: 20px;
+            margin-right: 20px; */
+            margin: 10px;
+            width: 70%;
+        }
+        #ballimg {
+            display: block;
+            /* margin-left: 20px;
+            margin-right: 20px; */
+            margin: 10px;
+            width: 60%;
+        }
+        #stumpimg {
+            display: block;
+            /* margin-left: 20px; */
+            /* margin-right: 20px; */
+            margin: 10px;
+            width: 60%;
+        }
+        
     </style>
 </head>
+
+
+
+
 <body>
     <h1>Cricket Game Let's Play</h1>
     <p>Choose any of the following</p>
+
     <div id="p_div">
-        <button onclick="
-        let randomno=Math.random()*3;
-        let comchoice;
-
-        if(randomno>0 && randomno<=1) {
-            comchoice='Bat';
-        }
-        else if(randomno>1 && randomno<=2) {
-            comchoice='Ball';
-        }
-        else {
-            comchoice='Stump';
-        }
-
-        let result;
-
-        if(comchoice=='Bat') {
-            // alert(`It's a tie`);
-            result=`It's a tie`;
-        }
-        else if(comchoice=='Ball') {
-            // alert('User won');
-            result='User won';
-        }
-        else if(comchoice=='Stump') {
-            // alert('Computer won');
-            result='Computer won';
-        }
-
-        // alert(`You have chosen 'Bat' & Computer choose '`+comchoice+`'. So, `+result);
-
-        document.querySelector('#resultset').innerHTML=`You have chosen '<span style=color:red;>Bat</span>' & Computer choose '<span style=color:red;>`+comchoice+`</span>'. So, <span style=color:green;>`+result;
-
-        ">Bat</button>
+        <button class='buttons1' onclick="clickButton('Bat');"><img id="batimg" src="BatCricket.png"></button>
                                             
-        <button onclick="
-        randomno=Math.random()*3;
-        // comchoice;
+        <button class='buttons2' onclick="clickButton('Ball');"><img id="ballimg" src="BallCricket.png"></button>
 
-        if(randomno>0 && randomno<=1) {
-            comchoice='Bat';
-        }
-        else if(randomno>1 && randomno<=2) {
-            comchoice='Ball';
-        }
-        else {
-            comchoice='Stump';
-        }
+        <button class='buttons3' onclick="clickButton('Stump');"><img id="stumpimg" src="StumpCricket2.png"></button>
 
-        // result;
-
-        if(comchoice=='Bat') {
-            // alert(`It's a tie`);
-            result=`Computer won`;
-        }
-        else if(comchoice=='Ball') {
-            // alert('User won');
-            result=`It's a tie`;
-        }
-        else if(comchoice=='Stump') {
-            // alert('Computer won');
-            result='User won';
-        }
-
-        // alert(`You have chosen 'Ball' & Computer choose '`+comchoice+`'. So, `+result);
-
-        document.querySelector('#resultset').innerHTML=`You have chosen '<span style=color:red;>Ball</span>' & Computer choose '<span style=color:red;>`+comchoice+`</span>'. So, <span style=color:green;>`+result;
-
-        ">Ball</button>
-
-        <button onclick="
-        randomno=Math.random()*3;
-        // comchoice;
-
-        if(randomno>0 && randomno<=1) {
-            comchoice='Bat';
-        }
-        else if(randomno>1 && randomno<=2) {
-            comchoice='Ball';
-        }
-        else {
-            comchoice='Stump';
-        }
-
-        // result;
-
-        if(comchoice=='Stump') {
-            // alert(`It's a tie`);
-            result=`It's a tie`;
-        }
-        else if(comchoice=='Bat') {
-            // alert('User won');
-            result='User won';
-        }
-        else if(comchoice=='Ball') {
-            // alert('Computer won');
-            result='Computer won';
-        }
-
-        // alert(`You have chosen 'Stump' & Computer choose '`+comchoice+`'. So, `+result);
-        document.querySelector('#resultset').innerHTML=`You have chosen '<span style=color:red;>Stump</span>' & Computer choose '<span style=color:red;>`+comchoice+`</span>'. So, <span style=color:green;>`+result;
-        ">Stump</button>
     </div>
+    
     <h1 id="resultset"></h1>
+    <h2 id="scoreBoard"></h2>
+
+    <div id="refreshdiv">
+        <button id='refresh' onclick="refresh();"><img id='refreshimg' src="RefreshButton.png"></button>
+    </div>
+    
+    <script>
+                
+        function clickButton(userClick){
+            
+            let scoreWin=localStorage.getItem('scoreWin');
+            let scoreLoss=localStorage.getItem('scoreLoss');
+            let scoreTie=localStorage.getItem('scoreTie');
+
+            if(localStorage.getItem('scoreWin')==null && localStorage.getItem('scoreLoss')==null && localStorage.getItem('scoreTie')==null) {
+                scoreWin=0;
+                scoreLoss=0;
+                scoreTie=0;
+                localStorage.setItem('scoreWin',scoreWin);
+                localStorage.setItem('scoreLoss',scoreLoss);
+                localStorage.setItem('scoreTie',scoreTie);
+            }
+
+        
+            let randomno=Math.random()*3;
+            let comchoice;
+            
+            if(randomno>0 && randomno<=1) {
+                comchoice='Bat';
+            }
+            else if(randomno>1 && randomno<=2) {
+                comchoice='Ball';
+            }
+            else {
+                comchoice='Stump';
+            }
+
+            let result;
+            
+            if(userClick=='Bat') {                      //-------------------Bat
+
+                if(comchoice=='Bat') {
+                    result=`It's a tie`;
+                    localStorage.setItem('scoreTie',++scoreTie);
+                }
+                else if(comchoice=='Ball') {
+                    result='User won';
+                    localStorage.setItem('scoreWin',++scoreWin);
+                }
+                else if(comchoice=='Stump') {
+                    result='Computer won';
+                    localStorage.setItem('scoreLoss',++scoreLoss);
+                }
+            }
+            else if(userClick=='Ball') {                //-------------------Ball
+
+                if(comchoice=='Ball') {
+                    result=`It's a tie`;
+                    localStorage.setItem('scoreTie',++scoreTie);
+                }
+                else if(comchoice=='Stump') {
+                    result='User won';
+                    localStorage.setItem('scoreWin',++scoreWin);
+                }
+                else if(comchoice=='Bat') {
+                    result='Computer won';
+                    localStorage.setItem('scoreLoss',++scoreLoss);
+                }
+            }
+            else if(userClick=='Stump') {               //-------------------Stump
+
+                if(comchoice=='Stump') {
+                    result=`It's a tie`;
+                    localStorage.setItem('scoreTie',++scoreTie);
+                }
+                else if(comchoice=='Bat') {
+                    result='User won';
+                    localStorage.setItem('scoreWin',++scoreWin);
+                }
+                else if(comchoice=='Ball') {
+                    result='Computer won';
+                    localStorage.setItem('scoreLoss',++scoreLoss);
+                }
+            }
+            
+            document.querySelector('#resultset').innerHTML=`You have chosen '<span style=color:red;>`+userClick+`</span>' & Computer choose '<span style=color:red;>`+comchoice+`</span>'. So, <span style=color:green;>`+result;
+            
+            document.querySelector('#scoreBoard').innerHTML=`<span style='text-align:center; border:solid white 2px; border-radius:15px; background-color:white;'>Score Board :&nbsp; win : ${
+            localStorage.getItem('scoreWin')}, loss : ${
+            localStorage.getItem('scoreLoss')}, tie : ${
+            localStorage.getItem('scoreTie')}</span>`;
+                    
+        }
+         function refresh() {
+            localStorage.setItem('scoreWin',0);
+            localStorage.setItem('scoreLoss',0);
+            localStorage.setItem('scoreTie',0);
+            alert('Score is Reset');
+            document.querySelector('#scoreBoard').innerHTML=`<span style='text-align:center; border:solid white 2px; border-radius:15px; background-color:white;'>Score Board :&nbsp; win : ${
+            localStorage.getItem('scoreWin')}, loss : ${
+            localStorage.getItem('scoreLoss')}, tie : ${
+            localStorage.getItem('scoreTie')}</span>`;
+            }
+
+    </script>
 </body>
 </html>
